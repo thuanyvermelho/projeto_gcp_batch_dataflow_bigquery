@@ -79,7 +79,7 @@ O pipeline é composto por 3 etapas principais:
 1- **Extração de Dados:** O script ```download_anac_gcs.py``` é usado para extrair dados do site da ANAC e armazená-los no Google Cloud Storage.<br>
 
 #### Uploads dos arquivos
-![alt text](Imagens/Storage_arquivos.png)
+![alt text](Imagens/storage_arquivos.png)
 
 O arquivo ```test_preprocess.py``` é usado para realizar testes unitários e validar o esquema dos dados antes de subir para o Dataflow.<br>
 
@@ -91,10 +91,10 @@ O arquivo ```test_preprocess.py``` é usado para realizar testes unitários e va
 Os dados processados são enviados para o Dataflow, onde são transformados conforme o esquema tratado e carregados em pastas temporárias no Storage.<br>
 
 #### Pipeline comcluida
-![alt text](Imagens\estrutura_pipeline.png)     
+![alt text](Imagens/estrutura_pipeline.png)     
 
 #### Jobs processados
-![alt text](Imagens\jobs_processados.png)    
+![alt text](Imagens/jobs_processados.png)    
 
 3 - **Carregamento no BigQuery:** Após o processamento no Dataflow, os dados são carregados no BigQuery com o esquema correto.
 
