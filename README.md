@@ -1,6 +1,6 @@
-# GCP - Projeto de Engenharia de Dados: ETL dos voos da ANAC, utilizando Apache Beam no Dataflow, BigQuery e Looker Studio.
+# GCP - Projeto de Engenharia de Dados: ELT dos voos da ANAC, utilizando Storage, Apache Beam no Dataflow, BigQuery e Looker Studio.
 
-Este repositório contém o código e a documentação para o projeto de ETL (Extract, Transform, Load) dos dados de voos da ANAC (Agência Nacional de Aviação Civil) para o ano de 2024. O projeto tem como base de estudos utilizar as ferramentas da Google Cloud Platform (GCP) para a execução e gerenciamento dos recursos de dados.
+Este repositório contém o código e a documentação para o projeto de ELT (Extract, Load, Transform) dos dados de voos da ANAC (Agência Nacional de Aviação Civil) para o ano de 2024. O projeto tem como base de estudos utilizar as ferramentas da Google Cloud Platform (GCP) para a execução e gerenciamento dos recursos de dados.
 
 ## Pré-requisitos
 
