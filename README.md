@@ -51,7 +51,7 @@ poetry shell
 
 ## Descrição Geral
 
-O objetivo principal deste projeto é conhecer a ferramenta de pipeline de dados apache beam juntamento com o Dataflow. extrair dados através de web scraping, armazená-los no Google Cloud Storage, e desenvolver uma pipeline de processamento de dados utilizando o Apache Beam, executada no ambiente do Google Cloud Dataflow. Após o processamento, os dados são salvos no BigQuery. Os dados são extraídos do site da Agência Nacional de Aviação Civil (ANAC) do Brasil.
+O objetivo principal deste projeto é conhecer a ferramenta de pipeline de dados apache beam juntamento com o Dataflow. extrair dados através de web scraping, armazená-los no Google Cloud Storage, e desenvolver uma pipeline de processamento de dados utilizando o Apache Beam, executada no ambiente do Google Cloud Dataflow. Após o processamento, os dados são salvos no BigQuery. Os dados são extraídos do site da Agência Nacional de Aviação Civil (ANAC) mensalmente e incrementadas ao bigquery, mantendo o schema original com a descricao de cada coluna, conforme consta abaixo na etapa recursos adicionais.
  
 
 ## Fonte de Dados
