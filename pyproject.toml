@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "pipeline-dataflow"
+version = "0.1.0"
+description = ""
+authors = ["Thuany Vermelho <thuanyvermelho@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+apache-beam = {extras = ["gcp"], version = "^2.56.0"}
+requests = "^2.31.0"
+pytest = "^8.2.0"
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests"
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
