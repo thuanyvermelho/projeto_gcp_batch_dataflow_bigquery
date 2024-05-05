@@ -29,7 +29,7 @@ def preprocess(line):
         line (str): Uma linha do arquivo CSV de voos da ANAC.
 
     Returns:
-        dict: Um dicionário contendo os dados preprocessados da linha.
+        dict: Um dicionário contendo os dados pré-processados da linha.
     """
     cols = line.split(';')
     
@@ -40,7 +40,7 @@ def preprocess(line):
     chegada_real = convert_to_datetime(cols[9]) if cols[9] else None  # Verifica se o campo está vazio
 
        
-    # Construindo o dicionário com os dados preprocessados
+    # Construindo o dicionário com os dados pré-processados
     preprocessed_data = {
         'Sigla_ICAO_Empresa_Aerea': cols[0],
         'Numero_Voo': cols[1],
