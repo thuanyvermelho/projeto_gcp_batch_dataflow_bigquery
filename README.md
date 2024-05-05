@@ -11,8 +11,8 @@ Antes de iniciar, certifique-se de ter instalado em sua máquina local:
 - Poetry
 - Python 3.8 (Recomendado usar através do pyenv)
 - Pytest 
-- Conta na GCP(Google Cloud Platform)
-- Criar um projeto, cria conta de serviço na IAM e ativar as apis necessárias
+- Conta na GCP (Google Cloud Platform)
+- Criar um projeto, criar conta de serviço na IAM e ativar as APIs necessárias
 
 ## Configuração do Ambiente
 
@@ -51,7 +51,9 @@ poetry shell
 
 ## Descrição Geral
 
-O objetivo principal deste projeto é conhecer a ferramenta de pipeline de dados apache beam juntamento com o Dataflow. extrair dados através de web scraping, armazená-los no Google Cloud Storage, e desenvolver uma pipeline de processamento de dados utilizando o Apache Beam, executada no ambiente do Google Cloud Dataflow. Após o processamento, os dados são salvos no BigQuery. Os dados são extraídos do site da Agência Nacional de Aviação Civil (ANAC) mensalmente e incrementadas ao bigquery, mantendo o schema original com a descricao de cada coluna, conforme consta abaixo na etapa recursos adicionais.
+O objetivo principal deste projeto é conhecer a ferramenta de pipeline de dados Apache Beam juntamente com o Dataflow; extrair dados através de *web scraping*, armazená-los no Google Cloud Storage, e desenvolver uma pipeline de processamento de dados utilizando o Apache Beam, executada no ambiente do Google Cloud Dataflow. Após o processamento, os dados são salvos no BigQuery. 
+
+Os dados são extraídos do site da Agência Nacional de Aviação Civil (ANAC) mensalmente e incrementados ao BigQuery, mantendo o *schema* original com a descrição de cada coluna, conforme consta abaixo na etapa "Recursos Adicionais".
  
 
 ## Fonte de Dados
@@ -69,14 +71,14 @@ Para auxiliar na interpretação dos dados, disponibilizamos links diretos para 
 
 ## Objetivo Técnico
 
-A pipeline desenvolvida no Dataflow visa automatizar o processamento dos dados do VRA, desde a extração via web scraping até a análise final, proporcionando insights para o setor aéreo. Este projeto é uma demonstração prática de como as ferramentas de cloud e big data podem ser aplicadas para resolver problemas reais e fornecer soluções escaláveis e eficientes.
+A pipeline desenvolvida no Dataflow visa automatizar o processamento dos dados do VRA, desde a extração via *web scraping* até a análise final, proporcionando insights para o setor aéreo. Este projeto é uma demonstração prática de como as ferramentas de cloud e big data podem ser aplicadas para resolver problemas reais e fornecer soluções escaláveis e eficientes.
 
 
 ## Fluxo de Trabalho
 
 O pipeline é composto por 3 etapas principais:
 
-1- **Extração de Dados:** O script ```download_anac_gcs.py``` é usado para extrair dados do site da ANAC e armazená-los no Google Cloud Storage.<br>
+1 - **Extração de Dados:** O script ```download_anac_gcs.py``` é usado para extrair dados do site da ANAC e armazená-los no Google Cloud Storage.<br>
 
 #### Uploads dos arquivos
 ![alt text](Imagens/storage_arquivos.png)
@@ -90,7 +92,7 @@ O arquivo ```test_preprocess.py``` é usado para realizar testes unitários e va
 
 Os dados processados são enviados para o Dataflow, onde são transformados conforme o esquema tratado e carregados em pastas temporárias no Storage.<br>
 
-#### Pipeline comcluida
+#### Pipeline concluída
 ![alt text](Imagens/estrutura_pipeline.png)     
 
 #### Jobs processados
@@ -105,7 +107,7 @@ Os dados processados são enviados para o Dataflow, onde são transformados conf
 1. **Acesse o BigQuery**: Vá para o console do Google Cloud e abra o BigQuery.
 2. **Selecione o projeto e o dataset**: Certifique-se de que você está no projeto correto e que o dataset está selecionado.
 3. **Execute a consulta**: Cole a consulta SQL que estão armazenadas em ```src.queries.sql``` na interface do editor de query e pressione o botão 'Executar'.
-4. **Analisar os resultados**: Os resultados serão exibidos abaixo do editor. Você pode exportar os dados para o Google Sheets ou conecta-lo em uma ferramenta da visualização de dados. Neste caso, iremos conectar ao Looker Studio e fazer um dashboard.
+4. **Analisar os resultados**: Os resultados serão exibidos abaixo do editor. Você pode exportar os dados para o Google Sheets ou conectá-los a uma ferramenta da visualização de dados. Neste caso, iremos conectar ao Looker Studio e fazer um dashboard.
 
 ![alt text](Imagens/consultas_sql.png)
 

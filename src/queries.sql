@@ -1,4 +1,4 @@
---Consulta total dos voos ralziados e cancelados no trimestre 
+--Consulta total dos voos realizados e cancelados no trimestre 
 select 
     case
         when extract(MONTH from max(Partida_Prevista)) = 1 then 'Janeiro'

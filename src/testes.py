@@ -18,7 +18,7 @@ def preprocess(line):
     chegada_real = convert_to_datetime(cols[9]) if cols[9] else None  # Verifica se o campo está vazio
 
        
-    # Construindo o dicionário com os dados preprocessados
+    # Construindo o dicionário com os dados pré-processados
     preprocessed_data = {
         'Sigla_ICAO_Empresa_Aerea': cols[0],
         'Número_Voo': cols[1],
@@ -56,9 +56,7 @@ def insert_into_bigquery(preprocessed_data, table_id):
     if errors == []:
         print("Dados inseridos com sucesso no BigQuery.")
     else:
-        print("Erro ao inserir dados no BigQuery:", errors)
-
-# Exemplo de uso
+        print("Erro ao inserir dados no BigQuery:", errors) 
 
 # Exemplo de uso
 line = "AAL;995;0;I;KMIA;01/03/2024 00:45;01/03/2024 00:55;SBGR;01/03/2024 09:15;01/03/2024 09:10;REALIZADO"
