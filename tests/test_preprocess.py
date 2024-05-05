@@ -3,12 +3,12 @@ from datetime import datetime
 from src.job_process import preprocess  
 
 def test_preprocess_valid_number_as_string():
-    """Testa o preprocessamento de uma linha válida do arquivo CSV de voos da ANAC.
+    """Testa o pré-processamento de uma linha válida do arquivo CSV de voos da ANAC.
 
-    Verifica se os dados são corretamente preprocessados para uma linha com todos os campos preenchidos.
+    Verifica se os dados são corretamente pré-processados para uma linha com todos os campos preenchidos.
 
     Resultado Esperado:
-        O resultado do preprocessamento deve corresponder ao dicionário esperado com os valores corretos.
+        O resultado do pré-processamento deve corresponder ao dicionário esperado com os valores corretos.
 
     Caso de Teste:
         Testa a conversão de datas em string para datetime.
@@ -30,12 +30,12 @@ def test_preprocess_valid_number_as_string():
     assert preprocess(line) == expected
 
 def test_preprocess_missing_data():
-    """Testa o preprocessamento de uma linha com dados ausentes do arquivo CSV de voos da ANAC.
+    """Testa o pré-processamento de uma linha com dados ausentes do arquivo CSV de voos da ANAC.
 
-    Verifica se os dados são corretamente preprocessados para uma linha com a partida prevista e chegada real faltantes.
+    Verifica se os dados são corretamente pré-processados para uma linha com a partida prevista e chegada real faltantes.
 
     Resultado Esperado:
-        O resultado do preprocessamento deve corresponder ao dicionário esperado com os valores corretos e os campos faltantes preenchidos com None.
+        O resultado do pré-processamento deve corresponder ao dicionário esperado com os valores corretos e os campos faltantes preenchidos com None.
 
     Caso de Teste:
         Testa o tratamento de dados ausentes com a situação de voo como "CANCELADO".
