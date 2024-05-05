@@ -11,8 +11,8 @@ Antes de iniciar, certifique-se de ter instalado em sua máquina local:
 - Poetry
 - Python 3.8 (Recomendado usar através do pyenv)
 - Pytest 
-- Conta na GCP(Google Cloud Platform)
-- Criar um projeto, cria conta de serviço na IAM e ativar as apis necessárias
+- Conta na GCP (Google Cloud Platform)
+- Criar um projeto, criar conta de serviço na IAM e ativar as APIs necessárias
 
 ## Configuração do Ambiente
 
