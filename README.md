@@ -100,6 +100,22 @@ O arquivo ```test_preprocess.py``` é usado para realizar testes unitários e va
 
 Nesta etapa, as colunas de data e hora foram processadas para manter o esquema como timestamp, garantindo que os nomes das colunas permaneçam consistentes com o padrão de consulta da ANAC. Os dados processados são então enviados ao Dataflow, onde são transformados de acordo com o esquema predefinido e carregados em diretórios temporários no Storage.<br>
 
+## Dicionário dos dados 
+
+| Nome do Campo                  | Tipo       |Descrição |
+|--------------------------------|------------|------------|
+| Sigla_ICAO_Empresa_Aerea       |STRING      |Sigla ICAO da empresa aérea. |
+| Numero_Voo                     | STRING     |Número do voo. |
+| Codigo_DI                      | STRING     |Código DI. |
+| Codigo_Tipo_Linha              | STRING     |Código do tipo de linha. |
+| Sigla_ICAO_Aeroporto_Origem    | STRING     |Sigla ICAO do aeroporto de origem. |
+| Partida_Prevista               | TIMESTAMP  |Horário de partida previsto. |
+| Partida_Real                   | TIMESTAMP  |Horário de partida real. |
+| Sigla_ICAO_Aeroporto_Destino   | STRING     |Sigla ICAO do aeroporto de destino. |
+| Chegada_Prevista               | TIMESTAMP  |Horário de chegada previsto. |
+| Chegada_Real                   | TIMESTAMP  |Horário de chegada real. |
+| Situacao_Voo                   | STRING     |Situação do voo. |
+
 #### Siglas das colunas:
 
 - [Visualize as siglas com os nomes das empresas aéreas](https://www.gov.br/anac/pt-br/assuntos/dados-e-estatisticas/vra/glossario_de_empresas_aereas.xls)
