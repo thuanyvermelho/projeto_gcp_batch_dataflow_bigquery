@@ -39,6 +39,15 @@ poetry shell
 ```
 
 ## Arquitetura do projeto
+
+A arquitetura do projeto foi construida para ser escalável e armazenar todo historico de voos com cancelamentos e horários em que os voos ocorreram no ano de 2024.
+
+- **Coleta de Dados do Site da ANAC:** Usamos scripts automatizados para buscar dados mensalmente no site da ANAC. 
+- **Armazenamento no Google Cloud Storage:** Os dados coletados são armazenados de forma centralizada e segura no Google Cloud Storage.
+- **Processamento com Apache Beam e Google Dataflow:** Usando Apache Beam e Dataflow, processamos e transformamos os dados de maneira flexível e escalável, garantindo que possam lidar com diferentes volumes de informação.
+- **Armazenamento e Análise no Google BigQuery:** Após o processamento, os dados vão para o BigQuery, onde são rapidamente consultados e analisados usando SQL.
+- **Visualização e Relatórios com Looker:** Finalmente, conectamos ao Looker para criar relatórios interativos e dashboards que facilitam a interpretação dos dados.
+
 ![alt text](Imagens/etl_dataflow.drawio.png)
 
 ## Componentes
@@ -51,7 +60,7 @@ poetry shell
 
 ## Descrição Geral
 
-O objetivo principal deste projeto é conhecer a ferramenta de pipeline de dados apache beam juntamento com o Dataflow. extrair dados através de web scraping, armazená-los no Google Cloud Storage, e desenvolver uma pipeline de processamento de dados utilizando o Apache Beam, executada no ambiente do Google Cloud Dataflow. Após o processamento, os dados são salvos no BigQuery. Os dados são extraídos do site da Agência Nacional de Aviação Civil (ANAC) mensalmente e incrementadas ao bigquery, mantendo o schema original com a descricao de cada coluna, conforme consta abaixo na etapa recursos adicionais.
+O objetivo principal deste projeto é conhecer a ferramenta de pipeline de dados apache beam juntamento com o Dataflow. extrair dados através de web scraping, armazená-los no Google Cloud Storage, e desenvolver uma pipeline de processamento de dados utilizando o Apache Beam, executada no ambiente do Google Cloud Dataflow. Após o processamento, os dados são salvos no BigQuery. Os dados são extraídos do site da Agência Nacional de Aviação Civil (ANAC) mensalmente e incrementadas ao bigquery.
  
 
 ## Fonte de Dados
@@ -62,8 +71,9 @@ A ANAC disponibiliza publicamente a série histórica do VRA para facilitar a re
 
 #### Recursos Adicionais
 
-Para auxiliar na interpretação dos dados, disponibilizamos links diretos para visualizar as siglas usadas:
+Para auxiliar na interpretação dos dados, disponibilizamos links diretos para visualizar as siglas usadas e a documentação da fonte de dados:
 
+- [Documentação dos dados](https://www.gov.br/anac/pt-br/assuntos/dados-e-estatisticas/historico-de-voos)
 - [Visualize as siglas com os nomes das empresas aéreas](https://www.gov.br/anac/pt-br/assuntos/dados-e-estatisticas/vra/glossario_de_empresas_aereas.xls)
 - [Visualize as siglas com os nomes dos aeroportos](https://www.gov.br/anac/pt-br/assuntos/dados-e-estatisticas/vra/glossario_de_aerodromo.xls)
 
@@ -88,7 +98,12 @@ O arquivo ```test_preprocess.py``` é usado para realizar testes unitários e va
 
 2 - **Processamento de Dados:** O script ```job_process.py``` realiza o tratamento inicial do esquema dos dados no bucket do Storage.<br>
 
-Os dados processados são enviados para o Dataflow, onde são transformados conforme o esquema tratado e carregados em pastas temporárias no Storage.<br>
+Nesta etapa, as colunas de data e hora foram processadas para manter o esquema como timestamp, garantindo que os nomes das colunas permaneçam consistentes com o padrão de consulta da ANAC. Os dados processados são então enviados ao Dataflow, onde são transformados de acordo com o esquema predefinido e carregados em diretórios temporários no Storage.<br>
+
+#### Siglas das colunas:
+
+- [Visualize as siglas com os nomes das empresas aéreas](https://www.gov.br/anac/pt-br/assuntos/dados-e-estatisticas/vra/glossario_de_empresas_aereas.xls)
+- [Visualize as siglas com os nomes dos aeroportos](https://www.gov.br/anac/pt-br/assuntos/dados-e-estatisticas/vra/glossario_de_aerodromo.xls)
 
 #### Pipeline comcluida
 ![alt text](Imagens/estrutura_pipeline.png)     
